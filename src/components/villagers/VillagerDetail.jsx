@@ -2,7 +2,7 @@ import React from 'react';
 import { useDetailEvents } from '../../hooks/useEvents';
 
 const VillagerList = () => {
-  const { loading, villager } = useDetailEvents;
+  const { loading, villager } = useDetailEvents();
   if(loading) return <h1>Now Loading...</h1>;
   return (
     <div role="div" aria-label="villager">
