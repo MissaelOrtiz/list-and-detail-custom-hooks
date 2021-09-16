@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, /*fireEvent, waitFor*/ } from '@testing-library/react';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { MemoryRouter } from 'react-router-dom';
@@ -48,4 +48,17 @@ describe('VillagerList and VillagerDetail', () => {
     await screen.findByText('Admiral', { exact: false });
     expect(container).toMatchSnapshot();
   });
+
+  //   it('renders a list of villagers after a short load, clicking on one and continuing to its detail page', async () => {
+  //     render(<MemoryRouter><App /></MemoryRouter>);
+
+  //     screen.getByText('Now Loading...');
+
+  //     const admiralButton = screen.findByRole('button', { name: 'Admiral-button' });
+  //     fireEvent.click(admiralButton);
+
+//     return waitFor(() => {
+//       screen.findByText('Admiral', { exact: false });
+//     });
+//   });
 });
